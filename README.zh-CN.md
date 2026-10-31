@@ -37,7 +37,7 @@
 
 ### Windows 可玩版本
 
-已发布的 Windows 可玩版本可在本仓库的 [Releases](https://github.com/uim-g/f-1-reaction/releases) 下载。能否访问取决于仓库是否公开以及你的访问权限。
+已发布的 Windows 可玩版本可在本仓库的 [Releases](https://github.com/uim-g/F1-Reaction/releases) 下载。能否访问取决于仓库是否公开以及你的访问权限。
 
 拿到 Windows 导出包后：
 

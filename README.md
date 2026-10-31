@@ -37,7 +37,7 @@ Use the mouse; the space bar is not required. Timing starts when the lights go o
 
 ### Windows build
 
-Download published Windows builds from this repository's [Releases](https://github.com/uim-g/f-1-reaction/releases). Access depends on the repository's visibility and your permissions.
+Download published Windows builds from this repository's [Releases](https://github.com/uim-g/F1-Reaction/releases). Access depends on the repository's visibility and your permissions.
 
 If you have a Windows export package:
 
