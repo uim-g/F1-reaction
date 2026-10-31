@@ -37,13 +37,13 @@ Use the mouse; the space bar is not required. Timing starts when the lights go o
 
 ### Windows build
 
-A Windows build has been exported and tested locally. Public download packages, when available, will be listed in this repository's **Releases**.
+Download published Windows builds from this repository's [Releases](https://github.com/uim-g/f-1-reaction/releases). Access depends on the repository's visibility and your permissions.
 
 If you have a Windows export package:
 
 1. Extract the entire archive into one folder.
 2. Run `F1ReactionTest.exe`.
-3. Keep any accompanying `F1ReactionTest.pck` and runtime files in their original relative locations. Do not move only the EXE.
+3. For the v0.1.1 Windows build, project resources are embedded in the EXE; a separate PCK file is not required. The older v0.1.0 build requires its matching `F1ReactionTest.pck` beside the EXE. Keep any other accompanying runtime files in their original relative locations.
 
 Players do not need the Godot editor to run an exported build.
 
@@ -73,6 +73,7 @@ A web build is not available yet. Planned work includes configuring the Compatib
 ├── Reaction-Test-logo.png.import # Image import settings
 ├── export_presets.cfg            # Export configuration
 ├── .gitignore                    # Cache and local build exclusions
+├── LICENSE                       # MIT license
 ├── README.md                     # English documentation
 └── README.zh-CN.md               # Simplified Chinese documentation
 ```
@@ -99,6 +100,6 @@ Run the project again after making changes.
 
 This is an unofficial personal learning project. It is not affiliated with, authorized by, or endorsed by Formula 1, the FIA, or related organizations.
 
-No project open-source license has been selected yet. Repository visibility and licensing are separate decisions. A `LICENSE` file and the relevant information will be added if the project is formally released as open source.
+This project is licensed under the [MIT License](LICENSE). Copyright (c) 2026 uim-g. Third-party components and assets, if any, remain subject to their respective licenses. This license does not grant rights to third-party names or trademarks.
 
 This project uses **Godot Engine**, which is available under the MIT license. See the [Godot Engine License](https://godotengine.org/license/). The engine license is separate from the licensing of this project's code, logo, and other assets.

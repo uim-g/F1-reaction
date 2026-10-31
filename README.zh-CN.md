@@ -37,13 +37,13 @@
 
 ### Windows 可玩版本
 
-本项目已在本地导出并测试 Windows 可玩版本。公开下载包会在发布后列于本仓库的 **Releases**。
+已发布的 Windows 可玩版本可在本仓库的 [Releases](https://github.com/uim-g/f-1-reaction/releases) 下载。能否访问取决于仓库是否公开以及你的访问权限。
 
 拿到 Windows 导出包后：
 
 1. 将整个压缩包解压到同一个文件夹。
 2. 双击 `F1ReactionTest.exe`。
-3. 如果包中包含 `F1ReactionTest.pck` 或其他运行文件，请保持它们与 EXE 的相对位置，不要只移动 EXE。
+3. v0.1.1 Windows 版本已将项目资源内嵌到 EXE，无需单独的 PCK 文件。旧版 v0.1.0 仍需要将配套的 `F1ReactionTest.pck` 与 EXE 放在一起。如果包中包含其他运行依赖，请保持原有相对位置。
 
 运行导出版本不需要安装 Godot 编辑器。
 
@@ -73,6 +73,7 @@
 ├── Reaction-Test-logo.png.import # 图片导入设置
 ├── export_presets.cfg            # 导出配置
 ├── .gitignore                    # 缓存与本地导出文件的忽略规则
+├── LICENSE                       # MIT 许可证
 ├── README.md                     # 英文项目说明
 └── README.zh-CN.md               # 中文项目说明
 ```
@@ -99,7 +100,7 @@ const MAX_WAIT: float = 3.0
 
 这是一个非官方的个人学习项目，与 Formula 1、FIA 及相关组织没有隶属、授权或背书关系。
 
-本仓库目前尚未指定项目开源许可证。仓库是否公开与代码采用何种许可证是两项独立设置；后续如果正式开源，会补充 `LICENSE` 文件及相应说明。
+本项目采用 [MIT 许可证](LICENSE)，版权署名为 Copyright (c) 2026 uim-g。第三方组件和素材（如有）仍遵循其各自的许可证；本项目许可证不授予第三方名称或商标的使用权。
 
 本项目使用 **Godot Engine**，引擎采用 MIT 许可证，详见 [Godot Engine License](https://godotengine.org/license/)。引擎许可证与本项目代码、Logo 及其他素材的许可分别适用。
 
