@@ -25,13 +25,13 @@
 
 ## 当前功能
 
-* 五组红灯自动依次点亮、同时熄灭。
-* 全亮后随机等待，避免通过固定节奏预判起跑。
-* 提前点击判定抢跑。
-* 反应时间显示到小数点后三位，单位为秒。
-* 成绩或抢跑后返回 START，再手动开始下一局。
-* 英文界面提示与 Emoji，脚本附有中文注释。
-* 已完成 Windows 版本导出，并在本机测试可运行。
+- 五组红灯自动依次点亮、同时熄灭。
+- 全亮后随机等待，避免通过固定节奏预判起跑。
+- 提前点击判定抢跑。
+- 反应时间显示到小数点后三位，单位为秒。
+- 成绩或抢跑后返回 START，再手动开始下一局。
+- 英文界面提示与 Emoji，脚本附有中文注释。
+- 已完成 Windows 版本导出，并在本机测试可运行。
 
 ## 运行游戏
 
@@ -71,7 +71,7 @@
 ├── main.gd.uid                   # Godot 脚本资源标识
 ├── Reaction-Test-logo.png        # 游戏界面使用的 Logo
 ├── Reaction-Test-logo.png.import # 图片导入设置
-├── export\_presets.cfg            # 导出配置
+├── export_presets.cfg            # 导出配置
 ├── .gitignore                    # 缓存与本地导出文件的忽略规则
 ├── README.md                     # 英文项目说明
 └── README.zh-CN.md               # 中文项目说明
@@ -84,14 +84,14 @@
 在 `main.gd` 顶部可以修改以下参数，时间单位均为秒：
 
 ```gdscript
-const LIGHT\_INTERVAL: float = 1.0
-const MIN\_WAIT: float = 0.2
-const MAX\_WAIT: float = 3.0
+const LIGHT_INTERVAL: float = 1.0
+const MIN_WAIT: float = 0.2
+const MAX_WAIT: float = 3.0
 ```
 
-* `LIGHT\_INTERVAL`：相邻两组灯亮起的间隔。
-* `MIN\_WAIT`：第五组亮起后，随机等待的最短时间。
-* `MAX\_WAIT`：第五组亮起后，随机等待的最长时间。
+- `LIGHT_INTERVAL`：相邻两组灯亮起的间隔。
+- `MIN_WAIT`：第五组亮起后，随机等待的最短时间。
+- `MAX_WAIT`：第五组亮起后，随机等待的最长时间。
 
 修改后重新运行，即可观察节奏变化。
 
