@@ -1,0 +1,337 @@
+[gd_scene format=3 uid="uid://wqwe4vxd82y5"]
+
+[ext_resource type="Script" uid="uid://jd20u7wu46qr" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cd8lcqh6j2tnn" path="res://Reaction-Test-logo.png" id="2_0xm2m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wg7o"]
+bg_color = Color(0, 0, 0, 0.14901961)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adcqr"]
+bg_color = Color(0.13400996, 0.13400996, 0.16155672, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
+bg_color = Color(0.19103268, 0.19102949, 0.22374347, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0y4u"]
+bg_color = Color(0.8235294, 0.1764706, 0.21176471, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sku56"]
+bg_color = Color(0.20319337, 0.20320266, 0.25538662, 1)
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0.15057358, 0.1505602, 0.19147506, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.20319337, 0.20320266, 0.25538662, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Main" type="Control" unique_id=176324171]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xm2m")
+
+[node name="Background" type="ColorRect" parent="." unique_id=408642597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0627451, 0.09019608, 0.13333334, 1)
+
+[node name="Title" type="Label" parent="." unique_id=192417022]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -251.5
+offset_top = 20.0
+offset_right = 251.5
+offset_bottom = 108.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "🏎F1 Reaction Test"
+horizontal_alignment = 1
+
+[node name="LightBox" type="Panel" parent="." unique_id=1130012362]
+custom_minimum_size = Vector2(700, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -200.0
+offset_right = 350.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5wg7o")
+
+[node name="Logo" type="TextureRect" parent="LightBox" unique_id=1823315448]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 20.0
+offset_right = 128.0
+offset_bottom = 106.0
+grow_horizontal = 2
+texture = ExtResource("2_0xm2m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Lights" type="HBoxContainer" parent="LightBox" unique_id=462844063]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -226.0
+offset_right = 272.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 16
+
+[node name="LightBoard1" type="Panel" parent="LightBox/Lights" unique_id=166418126]
+custom_minimum_size = Vector2(96, 176)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_adcqr")
+
+[node name="Light" type="VBoxContainer" parent="LightBox/Lights/LightBoard1" unique_id=1705477807]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -70.0
+offset_right = 32.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="FakeLight" type="Panel" parent="LightBox/Lights/LightBoard1/Light" unique_id=459668607]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
+
+[node name="RealLight" type="Panel" parent="LightBox/Lights/LightBoard1/Light" unique_id=855062734]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_q0y4u")
+
+[node name="LightBoard2" type="Panel" parent="LightBox/Lights" unique_id=381509691]
+custom_minimum_size = Vector2(96, 176)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_adcqr")
+
+[node name="Light" type="VBoxContainer" parent="LightBox/Lights/LightBoard2" unique_id=2100087539]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -70.0
+offset_right = 32.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="FakeLight" type="Panel" parent="LightBox/Lights/LightBoard2/Light" unique_id=271217921]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
+
+[node name="RealLight" type="Panel" parent="LightBox/Lights/LightBoard2/Light" unique_id=1927963043]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_q0y4u")
+
+[node name="LightBoard3" type="Panel" parent="LightBox/Lights" unique_id=379793694]
+custom_minimum_size = Vector2(96, 176)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_adcqr")
+
+[node name="Light" type="VBoxContainer" parent="LightBox/Lights/LightBoard3" unique_id=2017596083]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -70.0
+offset_right = 32.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="FakeLight" type="Panel" parent="LightBox/Lights/LightBoard3/Light" unique_id=158674286]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
+
+[node name="RealLight" type="Panel" parent="LightBox/Lights/LightBoard3/Light" unique_id=1158657598]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_q0y4u")
+
+[node name="LightBoard4" type="Panel" parent="LightBox/Lights" unique_id=1126286617]
+custom_minimum_size = Vector2(96, 176)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_adcqr")
+
+[node name="Light" type="VBoxContainer" parent="LightBox/Lights/LightBoard4" unique_id=30381051]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -70.0
+offset_right = 32.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="FakeLight" type="Panel" parent="LightBox/Lights/LightBoard4/Light" unique_id=1776287054]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
+
+[node name="RealLight" type="Panel" parent="LightBox/Lights/LightBoard4/Light" unique_id=319912508]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_q0y4u")
+
+[node name="LightBoard5" type="Panel" parent="LightBox/Lights" unique_id=393186035]
+custom_minimum_size = Vector2(96, 176)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_adcqr")
+
+[node name="Light" type="VBoxContainer" parent="LightBox/Lights/LightBoard5" unique_id=870760363]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -70.0
+offset_right = 32.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="FakeLight" type="Panel" parent="LightBox/Lights/LightBoard5/Light" unique_id=2076706922]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
+
+[node name="RealLight" type="Panel" parent="LightBox/Lights/LightBoard5/Light" unique_id=1822223840]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_q0y4u")
+
+[node name="StartButton" type="Button" parent="." unique_id=580148584]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -128.0
+offset_right = 250.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9166399, 0.91663986, 0.9166398, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_sku56")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0xm2m")
+action_mode = 0
+button_mask = 3
+text = "START"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
