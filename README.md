@@ -25,13 +25,13 @@ Use the mouse; the space bar is not required. Timing starts when the lights go o
 
 ## Features
 
-- Five automatic, sequential red lights with simultaneous lights-out.
-- A random hold after the fifth light.
-- False-start detection.
-- Reaction times displayed in seconds to three decimal places.
-- An explicit return to START after a result or false start.
-- English interface text with emoji and Chinese code comments.
-- A Windows build exported and tested locally.
+* Five automatic, sequential red lights with simultaneous lights-out.
+* A random hold after the fifth light.
+* False-start detection.
+* Reaction times displayed in seconds to three decimal places.
+* An explicit return to START after a result or false start.
+* English interface text with emoji and Chinese code comments.
+* A Windows build exported and tested locally.
 
 ## Running the game
 
@@ -71,7 +71,7 @@ A web build is not available yet. Planned work includes configuring the Compatib
 ├── main.gd.uid                   # Godot script resource identifier
 ├── Reaction-Test-logo.png        # Game interface logo
 ├── Reaction-Test-logo.png.import # Image import settings
-├── export_presets.cfg            # Export configuration
+├── export\_presets.cfg            # Export configuration
 ├── .gitignore                    # Cache and local build exclusions
 ├── README.md                     # English documentation
 └── README.zh-CN.md               # Simplified Chinese documentation
@@ -84,14 +84,14 @@ The `.godot/` directory contains generated caches and is recreated by Godot. It 
 The following constants at the top of `main.gd` control the sequence. All values are in seconds:
 
 ```gdscript
-const LIGHT_INTERVAL: float = 1.0
-const MIN_WAIT: float = 0.2
-const MAX_WAIT: float = 3.0
+const LIGHT\_INTERVAL: float = 1.0
+const MIN\_WAIT: float = 0.2
+const MAX\_WAIT: float = 3.0
 ```
 
-- `LIGHT_INTERVAL`: time between consecutive light groups turning on.
-- `MIN_WAIT`: shortest hold after the fifth light turns on.
-- `MAX_WAIT`: longest hold after the fifth light turns on.
+* `LIGHT\_INTERVAL`: time between consecutive light groups turning on.
+* `MIN\_WAIT`: shortest hold after the fifth light turns on.
+* `MAX\_WAIT`: longest hold after the fifth light turns on.
 
 Run the project again after making changes.
 
@@ -102,3 +102,4 @@ This is an unofficial personal learning project. It is not affiliated with, auth
 No project open-source license has been selected yet. Repository visibility and licensing are separate decisions. A `LICENSE` file and the relevant information will be added if the project is formally released as open source.
 
 This project uses **Godot Engine**, which is available under the MIT license. See the [Godot Engine License](https://godotengine.org/license/). The engine license is separate from the licensing of this project's code, logo, and other assets.
+
