@@ -222,3 +222,70 @@ func finish_round() -> void:
 	start_button.disabled = false
 
 	print("Reaction time: %.3f s" % elapsed_seconds)
+
+
+func _on_licenses_button_pressed() -> void:
+	# 读取并显示许可内容，再打开弹窗。
+	var text_box := $LicensesDialog/LicenseText as RichTextLabel
+	text_box.text = build_license_text()
+	text_box.scroll_to_line(0)
+	$LicensesDialog.popup_centered()
+
+
+func build_license_text() -> String:
+	# 项目和字体的许可文本，直接读取项目中保留的原文件。
+	var content: String = "F1 Reaction Test - Licenses\n\n"
+
+	content += "=== Project: MIT License ===\n\n"
+	content += read_license_file("res://LICENSE")
+
+	content += "\n\n=== Open Sans ===\n\n"
+	content += read_license_file(
+		"res://fonts/license/open-sans/OFL.txt"
+	)
+
+	content += "\n\n=== Noto Color Emoji ===\n\n"
+	content += read_license_file(
+		"res://fonts/license/noto-emoji/LICENSE.txt"
+	)
+
+	# 从当前运行的 Godot 引擎读取其完整许可证。
+	content += "\n\n=== Godot Engine ===\n\n"
+	content += Engine.get_license_text()
+
+	# 保留引擎所含第三方组件的名称、版权署名及许可名称。
+	content += "\n\n=== Godot Third-Party Copyright Notices ===\n\n"
+
+	for component in Engine.get_copyright_info():
+		content += str(component["name"]) + "\n"
+
+		for part in component["parts"]:
+			for copyright_line in part["copyright"]:
+				content += str(copyright_line) + "\n"
+
+			content += "License: " + str(part["license"]) + "\n\n"
+
+	# 上面列出许可名称，这里提供对应的完整许可条款。
+	content += "\n=== Godot Third-Party License Texts ===\n\n"
+
+	var licenses: Dictionary = Engine.get_license_info()
+	var license_names: Array = licenses.keys()
+	license_names.sort()
+
+	for license_name in license_names:
+		content += "--- " + str(license_name) + " ---\n\n"
+		content += str(licenses[license_name]) + "\n\n"
+
+	return content
+
+
+func read_license_file(path: String) -> String:
+	# 文件不存在或读取失败时明确报错，避免以为空白内容就是成功。
+	var file := FileAccess.open(path, FileAccess.READ)
+
+	if file == null:
+		push_error("Cannot read license file: " + path)
+		return "LICENSE FILE COULD NOT BE LOADED:\n" + path
+
+	return file.get_as_text()
+	
