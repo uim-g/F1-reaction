@@ -8,6 +8,8 @@ A 2D racing-start reaction game built with **Godot 4.7.2 and GDScript**. This is
 
 Start a round, wait for all five red lights to go out, then click the same button again to measure your reaction time.
 
+**[Play in your browser](https://uim-g.github.io/F1-reaction/)** | [Download for Windows](https://github.com/uim-g/F1-reaction/releases)
+
 ## How to play
 
 1. Click **🟢 START** to begin.
@@ -32,12 +34,14 @@ Use the mouse; the space bar is not required. Timing starts when the lights go o
 - An explicit return to START after a result or false start.
 - English interface text with emoji and Chinese code comments.
 - A Windows build exported and tested locally.
+- A playable browser build hosted on GitHub Pages.
+- Bundled English and emoji fonts for consistent glyph support in web builds.
 
 ## Running the game
 
 ### Windows build
 
-Download published Windows builds from this repository's [Releases](https://github.com/uim-g/F1-Reaction/releases). Access depends on the repository's visibility and your permissions.
+Download published Windows builds from this repository's [Releases](https://github.com/uim-g/F1-reaction/releases).
 
 If you have a Windows export package:
 
@@ -59,7 +63,7 @@ The current project uses the **Forward+** renderer and **Direct3D 12** on Window
 
 ### Web version
 
-A web build is not available yet. Planned work includes configuring the Compatibility renderer and Web export, testing in a browser, and then providing a play link.
+The Web version is live on [GitHub Pages](https://uim-g.github.io/F1-reaction/). Open the link, wait for loading to finish, and play using the same button controls. No installation is required. The Web preset uses the Compatibility renderer with thread support disabled. Keep the game tab active during a round; background tabs can pause or throttle the game.
 
 ## Project structure
 
@@ -71,14 +75,16 @@ A web build is not available yet. Planned work includes configuring the Compatib
 ├── main.gd.uid                   # Godot script resource identifier
 ├── Reaction-Test-logo.png        # Game interface logo
 ├── Reaction-Test-logo.png.import # Image import settings
-├── export_presets.cfg            # Export configuration
+├── fonts/                        # English/emoji fonts, import settings, and ui_font.tres
+│   └── license/                  # Separate license notices for each font
+├── export_presets.cfg            # Windows and Web export configuration
 ├── .gitignore                    # Cache and local build exclusions
 ├── LICENSE                       # MIT license
 ├── README.md                     # English documentation
 └── README.zh-CN.md               # Simplified Chinese documentation
 ```
 
-The `.godot/` directory contains generated caches and is recreated by Godot. It is excluded from version control. Local Windows build files are also excluded by `.gitignore` and can be distributed separately as release packages.
+The `.godot/` directory contains generated caches and is recreated by Godot. It is excluded from version control. Local exports in `exports/` and the root Windows build files are also excluded by `.gitignore`. Windows packages are distributed through Releases. The live website is published from `docs/` on the `gh-pages` branch; the `main` branch contains the editable project source. Keep the bundled fonts and their import settings when running or modifying the source.
 
 ## Adjusting the timing
 
@@ -103,3 +109,8 @@ This is an unofficial personal learning project. It is not affiliated with, auth
 This project is licensed under the [MIT License](LICENSE). Copyright (c) 2026 uim-g. Third-party components and assets, if any, remain subject to their respective licenses. This license does not grant rights to third-party names or trademarks.
 
 This project uses **Godot Engine**, which is available under the MIT license. See the [Godot Engine License](https://godotengine.org/license/). The engine license is separate from the licensing of this project's code, logo, and other assets.
+
+Bundled fonts have their own licenses:
+
+- Open Sans: English text; see [license notice](fonts/license/open-sans/OFL.txt).
+- Noto Color Emoji: emoji fallback; see [license notice](fonts/license/noto-emoji/LICENSE.txt).

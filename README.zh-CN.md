@@ -8,6 +8,8 @@
 
 点击按钮开始，等待五盏红灯全部熄灭，再次点击同一个按钮，测试自己的反应速度。
 
+**[在线游玩](https://uim-g.github.io/F1-reaction/)** | [下载 Windows 版本](https://github.com/uim-g/F1-reaction/releases)
+
 ## 玩法
 
 1. 点击 **🟢 START** 开始一局。
@@ -32,12 +34,14 @@
 - 成绩或抢跑后返回 START，再手动开始下一局。
 - 英文界面提示与 Emoji，脚本附有中文注释。
 - 已完成 Windows 版本导出，并在本机测试可运行。
+- 网页版已部署到 GitHub Pages，可直接在线游玩。
+- 内置英文和 Emoji 字体，避免网页版缺少字形。
 
 ## 运行游戏
 
 ### Windows 可玩版本
 
-已发布的 Windows 可玩版本可在本仓库的 [Releases](https://github.com/uim-g/F1-Reaction/releases) 下载。能否访问取决于仓库是否公开以及你的访问权限。
+已发布的 Windows 可玩版本可在本仓库的 [Releases](https://github.com/uim-g/F1-reaction/releases) 下载。
 
 拿到 Windows 导出包后：
 
@@ -59,7 +63,7 @@
 
 ### 网页版本
 
-网页版尚未制作。后续计划配置 Compatibility 渲染器与 Web 导出，并在浏览器中验证后提供游玩链接。
+网页版已上线：[点击在线游玩](https://uim-g.github.io/F1-reaction/)。打开链接，等待加载完成后即可使用同样的按钮操作，无需安装。Web 导出使用 Compatibility（兼容）渲染器，并关闭线程支持。测试反应时请保持游戏标签页处于前台，切换到后台可能使游戏暂停或减慢。
 
 ## 项目结构
 
@@ -71,14 +75,16 @@
 ├── main.gd.uid                   # Godot 脚本资源标识
 ├── Reaction-Test-logo.png        # 游戏界面使用的 Logo
 ├── Reaction-Test-logo.png.import # 图片导入设置
-├── export_presets.cfg            # 导出配置
+├── fonts/                        # 英文与 Emoji 字体、导入配置及 ui_font.tres
+│   └── license/                  # 分别保留两份字体的许可证
+├── export_presets.cfg            # Windows 与 Web 导出配置
 ├── .gitignore                    # 缓存与本地导出文件的忽略规则
 ├── LICENSE                       # MIT 许可证
 ├── README.md                     # 英文项目说明
 └── README.zh-CN.md               # 中文项目说明
 ```
 
-`.godot/` 是 Godot 自动生成的缓存目录，重新打开项目时会生成，不需要提交到 Git。Windows 导出文件也由 `.gitignore` 排除，适合单独作为发布包分发。
+`.godot/` 是 Godot 自动生成的缓存目录，重新打开项目时会生成，不需要提交到 Git。`exports/` 中的本地导出文件和根目录的 Windows 成品也由 `.gitignore` 排除。Windows 可玩压缩包通过 Releases 分发；网站由 `gh-pages` 分支的 `docs/` 目录发布，`main` 分支保存可编辑的项目源码。从源码运行或修改时，请保留字体文件及其导入配置。
 
 ## 调整游戏节奏
 
@@ -104,3 +110,7 @@ const MAX_WAIT: float = 3.0
 
 本项目使用 **Godot Engine**，引擎采用 MIT 许可证，详见 [Godot Engine License](https://godotengine.org/license/)。引擎许可证与本项目代码、Logo 及其他素材的许可分别适用。
 
+项目内置的字体分别遵循各自的许可证：
+
+- Open Sans：显示英文，详见[字体许可](fonts/license/open-sans/OFL.txt)。
+- Noto Color Emoji：作为 Emoji 备用字体，详见[字体许可](fonts/license/noto-emoji/LICENSE.txt)。
