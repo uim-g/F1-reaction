@@ -21,7 +21,9 @@
 
 如果在红灯熄灭前提前点击，会显示 **FALSE START**，本局判定为抢跑。点击 BACK 可以返回初始界面。
 
-操作使用鼠标点击，不需要按空格。游戏的计时从红灯熄灭时开始，到按钮被按下时结束。
+电脑端使用鼠标点击，手机浏览器使用触摸操作，不需要按空格。游戏的计时从红灯熄灭时开始，到按钮被按下时结束。
+
+点击 **Licenses** 可查看许可声明，点击 **OK** 关闭窗口。
 
 > 这是用于娱乐和学习的反应测试。显示、输入设备及运行环境的延迟都会影响成绩，不适合用于精确的生理反应测量。0.2–3 秒是本游戏采用的模拟参数，不代表现行 F1 规则强制规定的范围。
 
@@ -36,6 +38,8 @@
 - 已完成 Windows 版本导出，并在本机测试可运行。
 - 网页版已部署到 GitHub Pages，可直接在线游玩。
 - 内置英文和 Emoji 字体，避免网页版缺少字形。
+- 游戏内可查看完整许可声明的 Licenses 窗口。
+- 已修复并验证手机浏览器单次触摸重复触发按钮的问题。
 
 ## 运行游戏
 
@@ -43,13 +47,13 @@
 
 已发布的 Windows 可玩版本可在本仓库的 [Releases](https://github.com/uim-g/F1-reaction/releases) 下载。
 
-拿到 Windows 导出包后：
+对于 **v0.1.2**：
 
-1. 将整个压缩包解压到同一个文件夹。
-2. 双击 `F1ReactionTest.exe`。
-3. v0.1.1 Windows 版本已将项目资源内嵌到 EXE，无需单独的 PCK 文件。旧版 v0.1.0 仍需要将配套的 `F1ReactionTest.pck` 与 EXE 放在一起。如果包中包含其他运行依赖，请保持原有相对位置。
+1. 打开 [v0.1.2 发布页面](https://github.com/uim-g/F1-reaction/releases/tag/v0.1.2)，在 **Assets（附件）** 中下载 `F1ReactionTest.exe`。
+2. 直接运行 EXE，无需解压 ZIP、配套 PCK 文件或安装 Godot。
+3. 点击游戏中的 **Licenses**，查看项目、字体、Godot 及第三方组件的许可声明。
 
-运行导出版本不需要安装 Godot 编辑器。
+旧版打包方式不同：v0.1.1 需要先解压 ZIP，其中的 EXE 已内嵌 PCK；v0.1.0 还需要将配套的 `F1ReactionTest.pck` 与 EXE 放在一起。旧版附带的其他运行文件也应保持原有相对位置。
 
 ### 从源码运行
 
@@ -70,8 +74,8 @@
 ```text
 .
 ├── project.godot                 # 项目设置与主场景入口
-├── main.tscn                     # 标题、Logo、起跑灯和按钮组成的场景
-├── main.gd                       # 亮灯流程、抢跑判定与反应计时
+├── main.tscn                     # 游戏界面与许可证弹窗
+├── main.gd                       # 游戏流程、反应计时与许可文本读取
 ├── main.gd.uid                   # Godot 脚本资源标识
 ├── Reaction-Test-logo.png        # 游戏界面使用的 Logo
 ├── Reaction-Test-logo.png.import # 图片导入设置
@@ -84,7 +88,7 @@
 └── README.zh-CN.md               # 中文项目说明
 ```
 
-`.godot/` 是 Godot 自动生成的缓存目录，重新打开项目时会生成，不需要提交到 Git。`exports/` 中的本地导出文件和根目录的 Windows 成品也由 `.gitignore` 排除。Windows 可玩压缩包通过 Releases 分发；网站由 `gh-pages` 分支的 `docs/` 目录发布，`main` 分支保存可编辑的项目源码。从源码运行或修改时，请保留字体文件及其导入配置。
+`.godot/` 是 Godot 自动生成的缓存目录，重新打开项目时会生成，不需要提交到 Git。`exports/` 中的本地导出文件和根目录的 Windows 成品也由 `.gitignore` 排除。Windows 可玩版本通过 Releases 分发；网站由 `gh-pages` 分支的 `docs/` 目录发布，`main` 分支保存可编辑的项目源码。从源码运行或修改时，请保留字体文件、导入配置及所有许可证文件。
 
 ## 调整游戏节奏
 
@@ -114,3 +118,13 @@ const MAX_WAIT: float = 3.0
 
 - Open Sans：显示英文，详见[字体许可](fonts/license/open-sans/OFL.txt)。
 - Noto Color Emoji：作为 Emoji 备用字体，详见[字体许可](fonts/license/noto-emoji/LICENSE.txt)。
+
+## 导出许可声明
+
+许可证窗口会从导出项目中读取 `LICENSE` 和两份字体许可文件。Windows、Web 两个导出预设的 **资源 → 导出非资源文件的过滤器** 都需要包含：
+
+```text
+LICENSE,fonts/license/open-sans/OFL.txt,fonts/license/noto-emoji/LICENSE.txt
+```
+
+发布单个 Windows EXE 时保持 **Embed PCK（内嵌 PCK）** 开启。导出后，将 EXE 单独复制到空文件夹中测试，确认 Licenses 能显示许可内容且没有文件读取错误。Godot 引擎许可及其所含第三方组件的版权与许可信息由 Engine 接口读取。

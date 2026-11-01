@@ -21,7 +21,9 @@ Start a round, wait for all five red lights to go out, then click the same butto
 
 Clicking before the lights go out results in a **FALSE START**. Click BACK to return to the initial screen.
 
-Use the mouse; the space bar is not required. Timing starts when the lights go out and stops when the button is pressed.
+Use mouse clicks on desktop or taps in a mobile browser; the space bar is not required. Timing starts when the lights go out and stops when the button is pressed.
+
+Click **Licenses** to view the license notices. Close the dialog using **OK**.
 
 > This game is for entertainment and learning. Display, input-device, and runtime latency affect the result, so it is not a precision physiological measurement. The 0.2–3-second hold is a simulation setting, not a claim about a mandatory interval in current F1 regulations.
 
@@ -36,6 +38,8 @@ Use the mouse; the space bar is not required. Timing starts when the lights go o
 - A Windows build exported and tested locally.
 - A playable browser build hosted on GitHub Pages.
 - Bundled English and emoji fonts for consistent glyph support in web builds.
+- An in-game Licenses dialog with full license notices.
+- A verified fix for duplicate button activation in mobile browsers.
 
 ## Running the game
 
@@ -43,13 +47,13 @@ Use the mouse; the space bar is not required. Timing starts when the lights go o
 
 Download published Windows builds from this repository's [Releases](https://github.com/uim-g/F1-reaction/releases).
 
-If you have a Windows export package:
+For **v0.1.2**:
 
-1. Extract the entire archive into one folder.
-2. Run `F1ReactionTest.exe`.
-3. For the v0.1.1 Windows build, project resources are embedded in the EXE; a separate PCK file is not required. The older v0.1.0 build requires its matching `F1ReactionTest.pck` beside the EXE. Keep any other accompanying runtime files in their original relative locations.
+1. Open the [v0.1.2 release](https://github.com/uim-g/F1-reaction/releases/tag/v0.1.2) and download `F1ReactionTest.exe` from **Assets**.
+2. Run the EXE directly. No ZIP extraction, separate PCK file, or Godot installation is required.
+3. Click **Licenses** in the game to read the project, font, Godot, and third-party license notices.
 
-Players do not need the Godot editor to run an exported build.
+Older releases use different packaging: extract the v0.1.1 ZIP before running its embedded-PCK EXE; v0.1.0 also requires its matching `F1ReactionTest.pck` beside the EXE. Keep any other runtime files supplied with an older release in their original relative locations.
 
 ### Run from source
 
@@ -70,8 +74,8 @@ The Web version is live on [GitHub Pages](https://uim-g.github.io/F1-reaction/).
 ```text
 .
 ├── project.godot                 # Project settings and main scene
-├── main.tscn                     # Title, logo, lights, and button
-├── main.gd                       # Light sequence, false starts, and timing
+├── main.tscn                     # Game interface and license dialog
+├── main.gd                       # Game logic and license text loading
 ├── main.gd.uid                   # Godot script resource identifier
 ├── Reaction-Test-logo.png        # Game interface logo
 ├── Reaction-Test-logo.png.import # Image import settings
@@ -84,7 +88,7 @@ The Web version is live on [GitHub Pages](https://uim-g.github.io/F1-reaction/).
 └── README.zh-CN.md               # Simplified Chinese documentation
 ```
 
-The `.godot/` directory contains generated caches and is recreated by Godot. It is excluded from version control. Local exports in `exports/` and the root Windows build files are also excluded by `.gitignore`. Windows packages are distributed through Releases. The live website is published from `docs/` on the `gh-pages` branch; the `main` branch contains the editable project source. Keep the bundled fonts and their import settings when running or modifying the source.
+The `.godot/` directory contains generated caches and is recreated by Godot. It is excluded from version control. Local exports in `exports/` and the root Windows build files are also excluded by `.gitignore`. Windows packages are distributed through Releases. The live website is published from `docs/` on the `gh-pages` branch; the `main` branch contains the editable project source. Keep the bundled fonts, their import settings, and all license files when running or modifying the source.
 
 ## Adjusting the timing
 
@@ -114,3 +118,13 @@ Bundled fonts have their own licenses:
 
 - Open Sans: English text; see [license notice](fonts/license/open-sans/OFL.txt).
 - Noto Color Emoji: emoji fallback; see [license notice](fonts/license/noto-emoji/LICENSE.txt).
+
+## Exporting license notices
+
+The license dialog reads `LICENSE` and the font license files from the exported project. For both Windows and Web presets, keep these entries in **Resources > Filters to export non-resource files**:
+
+```text
+LICENSE,fonts/license/open-sans/OFL.txt,fonts/license/noto-emoji/LICENSE.txt
+```
+
+Keep **Embed PCK** enabled for the standalone Windows EXE. After exporting, test the EXE by itself in an empty folder and confirm that the Licenses dialog contains the notices without a file-loading error. The dialog obtains Godot's license text and bundled third-party copyright/license information through the Engine API.
