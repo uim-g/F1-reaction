@@ -1,0 +1,14 @@
+[gd_resource type="FontVariation" format=3 uid="uid://cmp3kqogiucjq"]
+
+[ext_resource type="FontFile" uid="uid://hg4aogwp2mc1" path="res://fonts/OpenSans-Regular.ttf" id="1_8kicp"]
+[ext_resource type="FontFile" uid="uid://d0guh0a1xrii6" path="res://fonts/NotoColorEmoji.ttf" id="1_i4dnh"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("1_i4dnh")])
+base_font = ExtResource("1_8kicp")
+variation_opentype = {
+0: 1
+}
+opentype_features = {
+1667329140: 0
+}
